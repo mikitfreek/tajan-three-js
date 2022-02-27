@@ -251,7 +251,7 @@ function connect(ws, req) {
       const roomId=hostId.split('-')[0]
       ws.room=roomId
       console.log('Room created successfully by client: ' + hostId + ', with id: ' + roomId)
-      console.log('http://localhost:3000/r/' + roomId)
+      console.log((process.env.PORT) ? `https://infinite-mesa-09265.herokuapp.com:${process.env.PORT}/r/${roomId}` : `http://localhost:${config.port}/r/${roomId}`);
 
       rooms[roomId] = {
         'id': roomId,
