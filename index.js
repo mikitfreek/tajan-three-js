@@ -33,8 +33,8 @@ function initHttpServer(port) {
     
   });// res.redirect('back');
 
-  server.listen(port, () => {
-    console.log(`Server is working on http://localhost:${port}`)
+  server.listen(process.env.PORT || port, () => {
+    console.log(`Server is working on http://localhost:${process.env.PORT || port}`)
   })
 
   return app
