@@ -1,11 +1,14 @@
 {
-  "name": "three-typescript-starter",
+  "name": "tajan-three-js",
   "version": "1.0.0",
   "description": "three.js + typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --inline --open"
+    "start": "node server.js",
+    "live": "nodemon server.js",
+    "dev": "webpack serve --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -30,6 +33,11 @@
     "webpack-dev-server": "latest"
   },
   "dependencies": {
-    "three": "latest"
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "three": "^0.137.5",
+    "uuid": "^8.3.2",
+    "whatwg-url": "^11.0.0",
+    "ws": "^8.5.0"
   }
 }

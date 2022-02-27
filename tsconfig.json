@@ -8,7 +8,9 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "outDir": "./lib/",
-        "sourceMap": true
+        "sourceMap": true,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true
     },
     "exclude": [
         "node_modules",
