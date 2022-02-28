@@ -8,8 +8,8 @@ const server = createServer(app)
 const path = require('path')
 
 let joinCode
-const cardsMax=20,//5
-      cardsStart=20//2
+const cardsMax=5,//5
+      cardsStart=2//2
 
 function initWs() {
   const options = {
@@ -547,18 +547,18 @@ const ranks09 = [
 ]
 
 // karty do 8
-const ranks08 = [
-  'Royal flush',      // 09 01 02 // 2nd color
-  'Straight flush',   // 08 01 08_// 2nd color
-  'Four of a kind',   // 07 02 00 
-  'Full house',       // 06 02 03 
-  'Flush',            // 05 01 00 // 2nd color
-  'Three of a kind',  // 04 02 00    
-  'Straight',         // 02 08 00
-  'Two pairs',        // 02 03 02 // sort max to begin
-  'Pair',             // 01 02 00 
-  'High card',        // 00 02 00 
-]
+// const ranks08 = [
+//   'Royal flush',      // 09 01 02 // 2nd color
+//   'Straight flush',   // 08 01 08_// 2nd color
+//   'Four of a kind',   // 07 02 00 
+//   'Full house',       // 06 02 03 
+//   'Flush',            // 05 01 00 // 2nd color
+//   'Three of a kind',  // 04 02 00    
+//   'Straight',         // 02 08 00
+//   'Two pairs',        // 02 03 02 // sort max to begin
+//   'Pair',             // 01 02 00 
+//   'High card',        // 00 02 00 
+// ]
 // prawdopodobienstwo
 // dla kart:
 // od 9 4*6=24
@@ -572,18 +572,10 @@ const ranks08 = [
 // 9 os. Full House:  ; Flush 
 
 /////////////////
-let bid = '090102'; // output from server ------> client  // ['K','K','Q','Q','Q']
+// let bid = '090102'; // output from server ------> client  // ['K','K','Q','Q','Q']
 /////////////////
-let cards = 'AhApAtKkKp'; // - ,, -
+// let cards = 'AhApAtKkKp'; // - ,, -
 /////////////////
-
-// enum SUIT { None, Diamonds, Hearts, Clubs, Spades }
-// enum RANK { None, Ace, Two, Three, Four, Five, Six, Seven, Eight,
-//     Nine, Ten, Jack, Queen, King }
-// foreach(SUIT in Enum.GetValues(typeof(SUIT)))
-//     foreach(RANK in Enum.GetValues(typeof(RANK)))
-//         if (RANK!=RANK.None && SUIT!=SUIT.None)
-//             d[counter++] = new Card(RANK,SUIT);
 
 // Season enums can be grouped as static members of a class
 // class Season {
@@ -611,11 +603,6 @@ let cards = 'AhApAtKkKp'; // - ,, -
 // // We can explicitly check the type based on each enums class
 // console.log(season.constructor.name)
 // 'Season'
-
-// const SUIT = { None, Diamonds, Hearts, Clubs, Spades }
-// const RANK = { None, Ace, Two, Three, Four, Five, Six, Seven, Eight,
-//   Nine, Ten, Jack, Queen, King }
-
 
 /////////////
 // 1. Draw clients random cards

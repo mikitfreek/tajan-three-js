@@ -104,28 +104,28 @@ function init() {
     ws.send(JSON.stringify(payLoad))
   })
 
-  const destRoomId = document.createElement('input')
-  destRoomId.id = 'join-code'
-  destRoomId.placeholder = 'Enter room id..'
-  document.body.append(destRoomId)
+  // const destRoomId = document.createElement('input')
+  // destRoomId.id = 'join-code'
+  // destRoomId.placeholder = 'Enter room id..'
+  // document.body.append(destRoomId)
 
-  const btnJoin = document.createElement('button')
-  btnJoin.id = 'join'
-  btnJoin.innerText = 'join'
-  document.body.append(btnJoin)
-  btnJoin.addEventListener('click', e => {
-    const dest = destRoomId.value
-    if (dest.length===8){
-      //if (roomId === null)
+  // const btnJoin = document.createElement('button')
+  // btnJoin.id = 'join'
+  // btnJoin.innerText = 'join'
+  // document.body.append(btnJoin)
+  // btnJoin.addEventListener('click', e => {
+  //   const dest = destRoomId.value
+  //   if (dest.length===8){
+  //     //if (roomId === null)
 
-      const payLoad = {
-        'method': 'join',
-        'clientId': clientId,
-        'roomId': dest
-      }
-      ws.send(JSON.stringify(payLoad))
-    }
-  })
+  //     const payLoad = {
+  //       'method': 'join',
+  //       'clientId': clientId,
+  //       'roomId': dest
+  //     }
+  //     ws.send(JSON.stringify(payLoad))
+  //   }
+  // })
 
   ws.onmessage = function (event) {
     const res = JSON.parse(event.data);
