@@ -7,9 +7,9 @@ body {
 } */
 
 :root {
-  --color0: rgb(238, 149, 77); 
+  --color0: #ca7632;/*rgb(238, 149, 77); */
   --color1: rgb(230, 228, 225);
-  --color2: rgb(94, 94, 60);
+  --color2: rgb(116, 104, 80);/*rgb(94, 94, 60);*/
   /* rgb(255, 117, 67) */
 }
 
@@ -284,6 +284,16 @@ section#ui {
 
 .md-modal .message { font-size: 1.4em; color: #eed; margin: 0 .5em; text-align: center; }
 
+#alert{display:flex; flex-direction: column;}
+#alert > * {display:flex; justify-content: center;}
+#alert .clip {color:var(--color2); font-family: monospace;}
+#alert input {
+  color: #999;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 9px;
+  text-align:center;
+}
 
 @media screen and (min-width: 768px) {
   /* .btns-menu,  */

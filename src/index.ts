@@ -18,11 +18,10 @@ function createScene() {
 }
 
 function createCards(cards_) {
-  const count = cards_.length
   const cards = document.createElement('div')
   cards.className = 'cards'
 
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < cards_.length; i++) {
     const card = document.createElement('div')
     card.className = 'card'
     const label = document.createElement('div')
@@ -150,18 +149,32 @@ function init() {
         console.log(`${location.origin + '/r/' + roomId} - copied to clipboard`);
       })
       const alert = document.getElementById('alert')
+      while (alert.children.length >= 1) {
+        alert.removeChild(alert.lastChild);
+      }
       const p = document.createElement('p')
-      p.innerText = `Created a game id: ${roomId}!`
+      p.innerText = `Created a room! id: ${roomId}`
       alert.append(p)
       const inp = document.createElement('input')
-      inp.value=`${location.origin + '/r/' + roomId}`
+      inp.value=`${location.origin.replace(/^(http|https):\/\//, '') + '/r/' + roomId}`
       alert.append(inp)
+      const a = document.createElement('span')
+      a.innerText=`- copied to clipboard! -`
+      a.className='clip'
+      alert.append(a)
     }
 
     if (res.method === 'join') {
       roomId=res.room.id
       const clientId=res.clientId
       console.log('Room:' + roomId + ' joined successfully by client: ' + clientId)
+      const alert = document.getElementById('alert')
+      while (alert.children.length >= 1) {
+        alert.removeChild(alert.lastChild);
+      }
+      const p = document.createElement('p')
+      p.innerText = `Joined a room: ${roomId}`
+      alert.append(p)
     }
 
     if (res.method === 'draw') {
