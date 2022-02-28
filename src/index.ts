@@ -145,7 +145,17 @@ function init() {
       roomId=res.room.id
       const clientId=res.room.hostId
       console.log('Room created successfully by client: ' + clientId + ', with id: ' + roomId)
-      console.log(location.origin + '/r/' + roomId)
+      // console.log(location.origin + '/r/' + roomId)
+      navigator.clipboard.writeText(location.origin + '/r/' + roomId).then(res=>{
+        console.log(`${location.origin + '/r/' + roomId} - copied to clipboard`);
+      })
+      const alert = document.getElementById('alert')
+      const p = document.createElement('p')
+      p.innerText = `Created a game id: ${roomId}!`
+      alert.append(p)
+      const inp = document.createElement('input')
+      inp.value=`${location.origin + '/r/' + roomId}`
+      alert.append(inp)
     }
 
     if (res.method === 'join') {
@@ -270,7 +280,7 @@ function updateUI() {
 
   const cardsStraightSymbols9 = ['TJQKA', '9TJQK']
   // let _cardsStraightSymbols9=cardsStraightSymbols9
-  const cardsStraightSymbol9 = ['9TJQK']//_cardsStraightSymbols9.splice(1,1)
+  // const cardsStraightSymbol9 = ['9TJQK']//_cardsStraightSymbols9.splice(1,1)
 
   // karty od 9
   const ranks9 = [
@@ -479,6 +489,8 @@ let bid_ = new Bid(bid);
       list1.name='Cards'
       list1.title="cards"
       list1.size=10
+      let _width='4.1rem'
+      if(val==7 || val==4)list1.style.minWidth=_width
       list1.addEventListener('change', function () { 
         if (lists.childNodes.length > 2)
           onButtonClick2(list1.options.selectedIndex);
@@ -499,7 +511,7 @@ let bid_ = new Bid(bid);
       symbols[val].forEach(function(e, i) {
         const p = document.createElement('option');
         p.appendChild(document.createTextNode(e));
-        // p.value=String(i)
+        // p.value=String(symbols.length-i)
         list1.appendChild(p);
       });
 
@@ -509,16 +521,16 @@ let bid_ = new Bid(bid);
       if(val==7 || val==4) { // || val==1
       
       list2.name='Cards'
-      list2.id='cards'
       list2.title="cards"
       list2.size=10
+      list2.style.minWidth=_width
       
       //const _symbols= (val==7 || val==4) ? cards2Symbols9 : cardsColors9;
 
       cards2Symbols9.forEach(function(e, i) {
         const p = document.createElement('option');
         p.appendChild(document.createTextNode(e));
-        p.value=String(i)
+        // p.value=String(cards2Symbols9.length-i)
         list2.appendChild(p);
       });
 
@@ -535,7 +547,7 @@ let bid_ = new Bid(bid);
     ranks9.forEach(function(e, i) {
         const p = document.createElement('option');
         p.appendChild(document.createTextNode(e));
-        // p.value=String(i)
+        // p.value=String(ranks9.length-i)
         list0.appendChild(p);
     });
     

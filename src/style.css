@@ -88,6 +88,7 @@ body {
 .lists select:nth-child(n + 2) {
   font-family: monospace;
   font-size: 1.2rem;
+  min-width: 8rem;
 }
 
 font {
@@ -273,6 +274,7 @@ section#ui {
 }
 
 .md-modal .content {
+  position: relative;
   color: rgb(224, 224, 204);
   font-size: 1.9rem;
   font-weight: 500;
@@ -297,6 +299,30 @@ section#ui {
   .confirm { justify-content: flex-end; }
 }
 
+@media screen and (min-width: 200px) {
+  .lists select, .lists select:nth-child(n + 2) {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 276px) {
+  .lists select, .lists select:nth-child(n + 2) {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 376px) {
+  .lists select, .lists select:nth-child(n + 2) {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 976px) {
+  .lists select, .lists select:nth-child(n + 2) {
+    font-size: 2rem;
+  }
+}
+/* .lists select:nth-last-child(n+2) ~ select:last-child{
+  background-color: #fff;
+} */
 /* Dark-mode */
 /* #create, #join-code, #join, #bid-code, #bid, #draw, #check {position: fixed; color: white; background-color: #333; width:250px;} */
 
