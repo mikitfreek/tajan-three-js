@@ -1,22 +1,5 @@
-# Typescript Three.js Webpack Starter
+# Poker Tajski
 
-- Typescript support.
-- Webpack
-- Html plugin
+![Zrzut ekranu 2022-05-29 230223](https://user-images.githubusercontent.com/65701109/170891322-df829321-d645-4277-bb36-51ba22620cbc.png)
 
-## Usage
-
-### Install Typscript
-
-```
-npm install typescript -g
-```
-
-### Start
-
-```
-$ git clone https://github.com/pinqy520/three-typescript-starter.git
-$ cd three-typescript-starter
-$ npm install # or yarn
-$ npm start
-```
+![Zrzut ekranu 2022-05-29 230201](https://user-images.githubusercontent.com/65701109/170891325-da664a6e-2721-4c60-b50b-8dc0df4eab99.png)
